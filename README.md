@@ -1,3 +1,51 @@
+<p align="center">
+  <!-- Linguagem principal -->
+  <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+  </a>
+  
+  <!-- Framework web -->
+  <a href="https://www.djangoproject.com/">
+    <img src="https://img.shields.io/badge/-Django-092E20?style=flat-square&logo=django&logoColor=white" alt="Django" />
+  </a>
+
+  <!-- Banco de dados -->
+  <a href="https://www.sqlite.org/">
+    <img src="https://img.shields.io/badge/-SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite" />
+  </a>
+
+  <!-- Frontend -->
+  <a href="https://getbootstrap.com/docs/3.4/">
+    <img src="https://img.shields.io/badge/-Bootstrap%203-563D7C?style=flat-square&logo=bootstrap&logoColor=white" alt="Bootstrap 3" />
+  </a>
+
+  <!-- Ícones -->
+  <a href="https://fontawesome.com/v4/">
+    <img src="https://img.shields.io/badge/-Font%20Awesome%204-339AF0?style=flat-square&logo=font-awesome&logoColor=white" alt="Font Awesome" />
+  </a>
+
+  <!-- API IA -->
+  <a href="https://deepseek.com/">
+    <img src="https://img.shields.io/badge/-DeepSeek%20API-5C4EE5?style=flat-square&logo=ai&logoColor=white" alt="DeepSeek API" />
+  </a>
+
+  <!-- Autenticação -->
+  <a href="https://docs.djangoproject.com/en/5.2/topics/auth/">
+    <img src="https://img.shields.io/badge/-Django%20Auth-FF6B6B?style=flat-square&logo=django&logoColor=white" alt="Django Auth" />
+  </a>
+
+  <!-- Variáveis de ambiente -->
+  <a href="https://pypi.org/project/python-dotenv/">
+    <img src="https://img.shields.io/badge/-Dotenv-ECD53F?style=flat-square&logo=python&logoColor=black" alt="Dotenv" />
+  </a>
+
+  <!-- Status do projeto -->
+  <img src="https://img.shields.io/badge/status-em%20desenvolvimento-yellow?style=flat-square" alt="Status" />
+  
+  <!-- Licença -->
+  <img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="MIT License" />
+</p>
+  
 ![Gemini_Generated_Image_fz4suifz4suifz4s](https://github.com/user-attachments/assets/21933bf4-d43f-4204-99e4-a9dab6999022)
 
 ## 📋 Descrição
