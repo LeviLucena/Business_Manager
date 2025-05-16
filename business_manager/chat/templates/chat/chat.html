@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Empresarial</title>
+    <!-- Bootstrap 3 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .chat-container {
+            max-width: 800px;
+            margin: 30px auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .chat-header {
+            background-color: #337ab7;
+            color: white;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+        }
+        .chat-body {
+            padding: 20px;
+            min-height: 300px;
+        }
+        .chat-message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .user-message {
+            background-color: #f5f5f5;
+            border-left: 4px solid #337ab7;
+        }
+        .bot-message {
+            background-color: #e8f4fd;
+            border-left: 4px solid #5bc0de;
+        }
+        .chat-input {
+            margin-top: 20px;
+        }
+        .timestamp {
+            font-size: 0.8em;
+            color: #777;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="chat-container">
+                    <div class="chat-header text-center">
+                        <h2><i class="fa fa-comments"></i> Chat Empresarial</h2>
+                    </div>
+                    
+                    <div class="chat-body">
+                        <!-- Histórico de Mensagens -->
+                        {% if resposta %}
+                            <div class="chat-message user-message">
+                                <strong><i class="fa fa-user"></i> Você:</strong>
+                                <p>{{ request.POST.message }}</p>
+                                <div class="timestamp text-right">
+                                    <i class="fa fa-clock-o"></i> {{ now|date:"H:i" }}
+                                </div>
+                            </div>
+                            
+                            <div class="chat-message bot-message">
+                                <strong><i class="fa fa-robot"></i> Assistente:</strong>
+                                <p>{{ resposta }}</p>
+                                <div class="timestamp text-right">
+                                    <i class="fa fa-clock-o"></i> {{ now|date:"H:i" }}
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="text-center text-muted">
+                                <i class="fa fa-commenting-o fa-3x"></i>
+                                <p>Como posso ajudar você hoje?</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="chat-footer" style="padding: 15px; border-top: 1px solid #eee;">
+                        <form method="post" class="form-inline">
+                            {% csrf_token %}
+                            <div class="form-group" style="width: 85%;">
+                                <div class="input-group" style="width: 100%;">
+                                    <input type="text" name="message" class="form-control" placeholder="Digite sua mensagem..." required>
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa fa-paper-plane"></i> Enviar
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery e Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Rolagem automática para a última mensagem
+        $(document).ready(function(){
+            $('.chat-body').scrollTop($('.chat-body')[0].scrollHeight);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <i class="fa fa-line-chart"></i> Business Manager
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/"><i class="fa fa-home"></i> Início</a></li>
+                <li><a href="/clientes/"><i class="fa fa-users"></i> Clientes</a></li>
+                <li><a href="/produtos/"><i class="fa fa-cubes"></i> Produtos</a></li>
+                <li><a href="/chat/"><i class="fa fa-comments"></i> Chatbot</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                <li><a href="/admin/"><i class="fa fa-cog"></i> Admin</a></li>
+                <li><a href="/admin/logout/"><i class="fa fa-sign-out"></i> Sair</a></li>
+                {% else %}
+                <li><a href="/accounts/login/"><i class="fa fa-sign-in"></i> Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
